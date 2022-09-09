@@ -16,6 +16,18 @@ public class Line {
         intercept = b;
     
     }
+
+    public void setSlope(double m)
+    {
+        slope = m;
+    }
+
+    public void setInt(double b)
+    {
+        intercept = b;
+    }
+
+
     
     
     public double getSlope()
@@ -64,6 +76,11 @@ public class Line {
             return b;
         }
         
+    }
+
+    public String toString()
+    {
+        return slope + " how does this even work lol";
     }
 
 }
