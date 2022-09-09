@@ -1,62 +1,65 @@
 public class Line {
-    double slope;
-    double intercept;
 
-
+    public double slope;
+    public double intercept;
+    
+    
     public Line()
     {
-        slope = 1;
-        intercept = 0;
+        slope = 2;
+        intercept = 10;
     }
-    public Line(double slope, double intercept)
+    
+    public Line(double m, double b)
     {
-        this.slope = slope;
-        this.intercept = intercept;
+        slope = m;
+        intercept = b;
+    
     }
-    public void setSlope(double newSlope)
-    {
-        slope = newSlope;
-    }
+    
+    
     public double getSlope()
     {
         return slope;
     }
-    public void setIntercept(double newIntercept)
-    {
-        intercept = newIntercept;
-    }
-    public double getIntercept()
-    {
-        return intercept;
-    }
-    double x;
-    double y;
-
-    public void onLine()
-    {
-        x = 0;
-        y = 0;
-        
-    }
-    public void setx(double newx)
-    {
-        x = newx;
-    }
-    public double getx()
-    {
-        return x;
-    }
-    public void sety(double newy)
-    {
-        y = newy;
-    }
-    public double gety()
-    {
-        return y;
-    }
+    
     public boolean onLine(double x, double y)
     {
-        double lineY = slope*x+intercept;
+        double yIntercept = slope*x+intercept;
+        
+        if (yIntercept == y)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+        
+            
+    }
+
+    Double Intercect(Line o)
+    {
+        if (slope == o.slope)
+        {
+            System.out.println("No intercetion point");
+            return intercept;
+        }
+        else
+        {
+            double a = ((o.intercept - intercept) / (slope - o.slope));
+            double b = (slope * a) + intercept;
+            
+            double d = (int)((a*100)+0.5)/100;
+            double c = (int)((b*100)+0.5)/100;
+            
+            System.out.println("The intercection point is " + a + ","+ b);
+            System.out.println("The rounded intercection point is " + d + ","+ c);
+            return b;
+        }
         
     }
+
 }
