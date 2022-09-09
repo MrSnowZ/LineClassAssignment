@@ -6,8 +6,8 @@ public class Line {
     
     public Line()
     {
-        slope = 2;
-        intercept = 10;
+        slope = 3;
+        intercept = 5;
     }
     
     public Line(double m, double b)
@@ -21,6 +21,11 @@ public class Line {
     public double getSlope()
     {
         return slope;
+    }
+
+    public double getIntercept()
+    {
+       return intercept; 
     }
     
     public boolean onLine(double x, double y)
@@ -49,14 +54,13 @@ public class Line {
         }
         else
         {
-            double a = ((o.intercept - intercept) / (slope - o.slope));
+            double a = ((o.getIntercept() - intercept) / (slope - o.getSlope()));
             double b = (slope * a) + intercept;
             
             double d = (int)((a*100)+0.5)/100;
             double c = (int)((b*100)+0.5)/100;
             
             System.out.println("The intercection point is " + a + ","+ b);
-            System.out.println("The rounded intercection point is " + d + ","+ c);
             return b;
         }
         

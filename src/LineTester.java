@@ -4,7 +4,7 @@ public class LineTester {
     {
         //code
         Line l1 = new Line();
-        Line l2 = new Line(0.5,2);
+        Line l2 = new Line(3,4);
         Line l3 = new Line(0.5,3);
         boolean isOneTheLine = l2.onLine(0,2);
         System.out.println(isOneTheLine);
